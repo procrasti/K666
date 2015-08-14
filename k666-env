@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# This script creates a virtualenv named 'env' and installs all
+# python dependencies before activating the env and running the server.
+# If 'env' already exists, it is activated and started
+# without any installations.
+#
+# From: electrum/electrum-env
+# Modified: procrasti@k5-stats.org 13 Aug 2015
+
+if ! [ -e ./env/bin/activate ]; then
+	virtualenv env -p /usr/bin/python3 # --system-site-packages
+fi
+
+source ./env/bin/activate
+python setup.py install
+
+if ! [ -e k666 ]; then
+    django-admin startproject k666 .
+fi
+
+if ! [ -e db.sqlite3 ]; then
+    ./manage.py syncdb
+fi
+
+./manage.py runserver "$@"
+
+# deactivate
