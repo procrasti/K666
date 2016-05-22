@@ -30,8 +30,6 @@ $ . ./k666-env
 ## 6. Visit the site.
 Go to http://localhost:8000/static/index.html ... see an index page!
 
-Also http://localhost:8000/admin should work with the admin user!
-
 ## 7. Hooray!
 
 # FreeK666 
