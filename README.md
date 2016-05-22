@@ -14,6 +14,8 @@ After cloning into your directory run
 ## 1. Create the environment
 $ . ./k666-env
 
+This starts the server, but we still have a couple of things to do before the server is ready.
+
 ## 2. Press control-C to exit
 
 ## 3. Create the database tables/migrations
